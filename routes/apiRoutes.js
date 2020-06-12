@@ -22,7 +22,7 @@ module.exports = app => {
       }
       else {
         const notesArray = JSON.parse(data);
-        const id = notesArray.length;
+        const id = notesArray[notesArray.length-1].id + 1;
         const note = {...req.body,"id": id};
         notesArray.push(note);
         fs.writeFile("./db/db.json", JSON.stringify(notesArray), err => {
@@ -52,6 +52,9 @@ module.exports = app => {
         fs.writeFile("./db/db.json", JSON.stringify(notesArray), err => {
           if (err) {
             res.status(503);
+            res.end();
+          }
+          else {
             res.end();
           }
         });
