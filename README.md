@@ -1,6 +1,6 @@
 # Note Taker
 
-![GIF Walkthrough]()
+![Notetaker GIF Walkthrough](notetaker.gif)
 
 #### Table of Contents
 1. [Installation](#installation)
